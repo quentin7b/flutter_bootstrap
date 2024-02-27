@@ -10,7 +10,7 @@ It has built in dependencies pre configured to handle multiple things
 ## Start using it
 
 1. Git clone this project
-2. Run `dart reinit.dart` and follow instructions to configure package name
+2. Run `dart init.dart` and follow instructions to configure package name
 3. Run `flutter pub get`
 4. You're good to go
 

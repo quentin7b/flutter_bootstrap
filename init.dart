@@ -41,7 +41,7 @@ void main(List<String> args) {
   // First we uppercase each letter after a _ if they exist
   String iosBundle = '';
   int len = packageName.length;
-  for (int lI = 0; lI < len - 1; lI++) {
+  for (int lI = 0; lI < len; lI++) {
     if (packageName[lI] == '_') {
       if (lI + 1 < len) {
         iosBundle += packageName[lI + 1].toUpperCase();
