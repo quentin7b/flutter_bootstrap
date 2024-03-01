@@ -84,6 +84,26 @@ void main(List<String> args) {
   }
 
   stdout.writeln('All set !');
+  stdout.writeln('Would you like to run pub get? (y/n)');
+  final answer = stdin.readLineSync();
+  if (answer == 'y') {
+    Process.runSync('flutter', ['pub', 'get']);
+  }
+
+  stdout.writeln('Would you like to run pub run build_runner build? (y/n)');
+  final answer2 = stdin.readLineSync();
+  if (answer2 == 'y') {
+    Process.runSync('dart', ['pub', 'run', 'build_runner', 'build']);
+  }
+
+  // Add web support ?
+  stdout.writeln('Would you like to add web support? (y/n)');
+  final answer3 = stdin.readLineSync();
+  if (answer3 == 'y') {
+    Process.runSync('flutter', ['create', '--platforms', 'web', '.']);
+  }
+
+  stdout.writeln('Bye !');
 }
 
 String askProjectName() {
@@ -102,6 +122,10 @@ String askProjectName() {
   if (answer == 'y') {
     return projectName;
   }
+  // Message
+  stdout.writeln(
+    'Project name invalid. Please try again (https://dart.dev/tools/linter-rules/package_names).',
+  );
   return askProjectName();
 }
 
@@ -119,5 +143,7 @@ String askPackageName() {
   if (answer == 'y') {
     return packageName;
   }
+  // Message
+  stdout.writeln('Package name invalid. Please try again.');
   return askPackageName();
 }
