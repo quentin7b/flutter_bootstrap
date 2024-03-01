@@ -25,6 +25,7 @@ Here is the list of all dependencies that are preconfigures for the project and 
 - **Routing** by [GoRouter](https://pub.dev/packages/go_router)
 - **Translations** by [Slang](https://pub.dev/packages/slang)
 - **Network by** [Dio](https://pub.dev/packages/dio)
+- **Logging by** [Logger](https://pub.dev/packages/logger)
 
 In a majority of those dependencies, code generation is used, so your best friend will be `dart run build_runner watch -d` which will run in background during all the dev phase of the project
 
