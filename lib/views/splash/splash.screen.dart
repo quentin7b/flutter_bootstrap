@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap_app/router.dart';
-import 'package:flutter_bootstrap_app/views/home/home.screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SplashRoute extends ConsumerWidget {
-  static const routeName = '/splash';
-
-  const SplashRoute({super.key});
+class SplashScreen extends ConsumerWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Future(() async {
       await init();
-      ref.read(routerProvider).go(HomeRoute.routeName);
+      ref.read(routerProvider).go(appRoutesPath(AppRoute.home));
     });
     return const Scaffold(
       body: Center(

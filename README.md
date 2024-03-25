@@ -78,15 +78,15 @@ For example:
 
 #### Specifics
 
-For routes that needs to be shown, this file must be named `[X]Route` and expose a static field named `routeName`.
+For routes that needs to be shown, this file must be named `[X]Screen` and expose have a declaration in [`AppRoute` enum](./lib/router.dart)
 
 In this way, when you need to add a route in [`lib/router.dart`](./lib/router.dart) you can do this
 
 ```dart
 GoRoute(
-    path: [X]Route.routeName,
+    path: appRoutesPath(AppRoute.[X]),
     pageBuilder: (context, state) => const MaterialPage(
-        child: [X]Route(),
+        child: [X]Screen(),
     ),
 ),
 ```
