@@ -2,6 +2,8 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+    // For Firebase uncomment the following line
+    // id "com.google.gms.google-services"
 }
 
 def localProperties = new Properties()
