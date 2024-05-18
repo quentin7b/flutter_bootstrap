@@ -69,7 +69,7 @@ void main(List<String> args) {
         ),
   );
 
-  // Finally replace name in all dart files
+  // Replace name in all dart files
   final files = Directory('./lib')
       .listSync(recursive: true)
       .whereType<File>()
@@ -82,6 +82,15 @@ void main(List<String> args) {
           ),
     );
   }
+
+  // And in .vscode/launch.json
+  final launchJson = File('.vscode/launch.json');
+  launchJson.writeAsStringSync(
+    launchJson.readAsStringSync().replaceAll(
+          'flutter_bootstrap_app',
+          projectName,
+        ),
+  );
 
   stdout.writeln('All set !');
   stdout.writeln('Would you like to run pub get? (y/n)');
