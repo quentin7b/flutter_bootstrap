@@ -9,5 +9,16 @@
             "empty": "We need your password",
             "invalid": "Your password must be at least 6 characters long"
         }
+    },
+    "subscriptions": {
+        "duration": {
+            "lifetime": "Lifetime",
+            "annual": "Every year",
+            "sixMonth": "Every 6 months",
+            "threeMonth": "Every 3 months",
+            "twoMonth": "Every 2 months",
+            "monthly": "Every month",
+            "weekly": "Every week"
+        }
     }
 }

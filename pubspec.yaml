@@ -35,6 +35,7 @@ dependencies:
   json_annotation: ^4.8.1
   logger: ^2.0.2+1
   path_provider: ^2.1.2
+  purchases_flutter: ^6.29.2
   riverpod_annotation: ^2.3.4
   shared_preferences: ^2.2.3
   slang: ^3.29.0

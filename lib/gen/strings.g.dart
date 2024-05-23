@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 10 (5 per locale)
+/// Strings: 24 (12 per locale)
 ///
-/// Built on 2024-05-23 at 07:20 UTC
+/// Built on 2024-05-23 at 13:07 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -150,6 +150,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	String get appName => 'Flutter Bootstrap';
 	late final _StringsErrorsEn errors = _StringsErrorsEn._(_root);
+	late final _StringsSubscriptionsEn subscriptions = _StringsSubscriptionsEn._(_root);
 }
 
 // Path: errors
@@ -161,6 +162,16 @@ class _StringsErrorsEn {
 	// Translations
 	late final _StringsErrorsEmailEn email = _StringsErrorsEmailEn._(_root);
 	late final _StringsErrorsPasswordEn password = _StringsErrorsPasswordEn._(_root);
+}
+
+// Path: subscriptions
+class _StringsSubscriptionsEn {
+	_StringsSubscriptionsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsSubscriptionsDurationEn duration = _StringsSubscriptionsDurationEn._(_root);
 }
 
 // Path: errors.email
@@ -183,6 +194,22 @@ class _StringsErrorsPasswordEn {
 	// Translations
 	String get empty => 'We need your password';
 	String get invalid => 'Your password must be at least 6 characters long';
+}
+
+// Path: subscriptions.duration
+class _StringsSubscriptionsDurationEn {
+	_StringsSubscriptionsDurationEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get lifetime => 'Lifetime';
+	String get annual => 'Every year';
+	String get sixMonth => 'Every 6 months';
+	String get threeMonth => 'Every 3 months';
+	String get twoMonth => 'Every 2 months';
+	String get monthly => 'Every month';
+	String get weekly => 'Every week';
 }
 
 // Path: <root>
@@ -211,6 +238,7 @@ class _StringsFr implements Translations {
 	// Translations
 	@override String get appName => 'Flutter Bootstrap';
 	@override late final _StringsErrorsFr errors = _StringsErrorsFr._(_root);
+	@override late final _StringsSubscriptionsFr subscriptions = _StringsSubscriptionsFr._(_root);
 }
 
 // Path: errors
@@ -222,6 +250,16 @@ class _StringsErrorsFr implements _StringsErrorsEn {
 	// Translations
 	@override late final _StringsErrorsEmailFr email = _StringsErrorsEmailFr._(_root);
 	@override late final _StringsErrorsPasswordFr password = _StringsErrorsPasswordFr._(_root);
+}
+
+// Path: subscriptions
+class _StringsSubscriptionsFr implements _StringsSubscriptionsEn {
+	_StringsSubscriptionsFr._(this._root);
+
+	@override final _StringsFr _root; // ignore: unused_field
+
+	// Translations
+	@override late final _StringsSubscriptionsDurationFr duration = _StringsSubscriptionsDurationFr._(_root);
 }
 
 // Path: errors.email
@@ -246,6 +284,22 @@ class _StringsErrorsPasswordFr implements _StringsErrorsPasswordEn {
 	@override String get invalid => 'Votre mot de passe doit contenir au moins 6 caractères';
 }
 
+// Path: subscriptions.duration
+class _StringsSubscriptionsDurationFr implements _StringsSubscriptionsDurationEn {
+	_StringsSubscriptionsDurationFr._(this._root);
+
+	@override final _StringsFr _root; // ignore: unused_field
+
+	// Translations
+	@override String get lifetime => 'A vie';
+	@override String get annual => 'Tous les year';
+	@override String get sixMonth => 'Tous les 6 mois';
+	@override String get threeMonth => 'Tous les 3 mois';
+	@override String get twoMonth => 'Tous les 2 mois';
+	@override String get monthly => 'Tous les mois';
+	@override String get weekly => 'Toutes les semaines';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -257,6 +311,13 @@ extension on Translations {
 			case 'errors.email.invalid': return 'It looks like your email address is not valid';
 			case 'errors.password.empty': return 'We need your password';
 			case 'errors.password.invalid': return 'Your password must be at least 6 characters long';
+			case 'subscriptions.duration.lifetime': return 'Lifetime';
+			case 'subscriptions.duration.annual': return 'Every year';
+			case 'subscriptions.duration.sixMonth': return 'Every 6 months';
+			case 'subscriptions.duration.threeMonth': return 'Every 3 months';
+			case 'subscriptions.duration.twoMonth': return 'Every 2 months';
+			case 'subscriptions.duration.monthly': return 'Every month';
+			case 'subscriptions.duration.weekly': return 'Every week';
 			default: return null;
 		}
 	}
@@ -270,6 +331,13 @@ extension on _StringsFr {
 			case 'errors.email.invalid': return 'Il semblerait que votre adresse email ne soit pas valide';
 			case 'errors.password.empty': return 'Nous avons besoin de votre mot de passe';
 			case 'errors.password.invalid': return 'Votre mot de passe doit contenir au moins 6 caractères';
+			case 'subscriptions.duration.lifetime': return 'A vie';
+			case 'subscriptions.duration.annual': return 'Tous les year';
+			case 'subscriptions.duration.sixMonth': return 'Tous les 6 mois';
+			case 'subscriptions.duration.threeMonth': return 'Tous les 3 mois';
+			case 'subscriptions.duration.twoMonth': return 'Tous les 2 mois';
+			case 'subscriptions.duration.monthly': return 'Tous les mois';
+			case 'subscriptions.duration.weekly': return 'Toutes les semaines';
 			default: return null;
 		}
 	}

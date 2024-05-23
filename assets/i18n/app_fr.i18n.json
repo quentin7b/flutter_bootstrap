@@ -9,5 +9,16 @@
             "empty": "Nous avons besoin de votre mot de passe",
             "invalid": "Votre mot de passe doit contenir au moins 6 caractères"
         }
+    },
+    "subscriptions": {
+        "duration": {
+            "lifetime": "A vie",
+            "annual": "Tous les year",
+            "sixMonth": "Tous les 6 mois",
+            "threeMonth": "Tous les 3 mois",
+            "twoMonth": "Tous les 2 mois",
+            "monthly": "Tous les mois",
+            "weekly": "Toutes les semaines"
+        }
     }
 }
