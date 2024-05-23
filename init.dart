@@ -2,13 +2,14 @@ import 'dart:io';
 
 void main(List<String> args) {
   stdout.writeln('Hello there !\nLet\'s set this project up for you!');
-  stdout
-      .writeln('First of all, what is the name of your project (dart style) ?');
-  final projectName = askProjectName();
-  stdout.writeln('Now what is your package name (like com.toto.app) ?');
-  final packageName = askPackageName();
   stdout.writeln(
-    'Your project and package name are $projectName and $packageName',
+    'First of all, what is package name of your project (dart style) ?',
+  );
+  final flutterPackage = askProjectName();
+  stdout.writeln('Now what is your identifier (like com.toto.app) ?');
+  final appIdentifier = askPackageName();
+  stdout.writeln(
+    'Your project and package name are $flutterPackage and $appIdentifier',
   );
 
   // Replace name in pubspec.yaml
@@ -16,7 +17,7 @@ void main(List<String> args) {
   pubspec.writeAsStringSync(
     pubspec.readAsStringSync().replaceAll(
           'name: flutter_bootstrap_app',
-          'name: $projectName',
+          'name: $flutterPackage',
         ),
   );
 
@@ -25,7 +26,7 @@ void main(List<String> args) {
   androidManifest.writeAsStringSync(
     androidManifest.readAsStringSync().replaceAll(
           'android:label="flutter_bootstrap_app"',
-          'android:label="$projectName"',
+          'android:label="$flutterPackage"',
         ),
   );
   // Replace applicationId in android/app/build.gradle
@@ -33,22 +34,22 @@ void main(List<String> args) {
   buildGradle.writeAsStringSync(
     buildGradle.readAsStringSync().replaceAll(
           'applicationId "com.example.flutter_bootstrap_app"',
-          'applicationId "$packageName"',
+          'applicationId "$appIdentifier"',
         ),
   );
 
   // For ios we need a correct bundle identifier with no _
   // First we uppercase each letter after a _ if they exist
   String iosBundle = '';
-  int len = packageName.length;
+  int len = appIdentifier.length;
   for (int lI = 0; lI < len; lI++) {
-    if (packageName[lI] == '_') {
+    if (appIdentifier[lI] == '_') {
       if (lI + 1 < len) {
-        iosBundle += packageName[lI + 1].toUpperCase();
+        iosBundle += appIdentifier[lI + 1].toUpperCase();
         lI++;
       }
     } else {
-      iosBundle += packageName[lI];
+      iosBundle += appIdentifier[lI];
     }
   }
 
@@ -78,7 +79,7 @@ void main(List<String> args) {
     file.writeAsStringSync(
       file.readAsStringSync().replaceAll(
             'flutter_bootstrap_app',
-            projectName,
+            flutterPackage,
           ),
     );
   }
@@ -88,9 +89,23 @@ void main(List<String> args) {
   launchJson.writeAsStringSync(
     launchJson.readAsStringSync().replaceAll(
           'flutter_bootstrap_app',
-          projectName,
+          flutterPackage,
         ),
   );
+
+  // And in assets/i18n/*.json
+  final i18n = Directory('./assets/i18n')
+      .listSync(recursive: true)
+      .whereType<File>()
+      .where((file) => file.path.endsWith('.json'));
+  for (final file in i18n) {
+    file.writeAsStringSync(
+      file.readAsStringSync().replaceAll(
+            'Flutter Bootstrap',
+            flutterPackage,
+          ),
+    );
+  }
 
   stdout.writeln('All set !');
   stdout.writeln('Would you like to run pub get? (y/n)');

@@ -1,3 +1,13 @@
 {
-    "appName": "Flutter Bootstrap"
+    "appName": "Flutter Bootstrap",
+    "errors": {
+        "email" : {
+            "empty": "We need your email address",
+            "invalid": "It looks like your email address is not valid"
+        },
+        "password": {
+            "empty": "We need your password",
+            "invalid": "Your password must be at least 6 characters long"
+        }
+    }
 }

@@ -1,0 +1,13 @@
+{
+    "appName": "Flutter Bootstrap",
+    "errors": {
+        "email" : {
+            "empty": "Nous avons besoin de votre adresse email",
+            "invalid": "Il semblerait que votre adresse email ne soit pas valide"
+        },
+        "password": {
+            "empty": "Nous avons besoin de votre mot de passe",
+            "invalid": "Votre mot de passe doit contenir au moins 6 caractères"
+        }
+    }
+}
