@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 24 (12 per locale)
+/// Strings: 40 (20 per locale)
 ///
-/// Built on 2024-05-23 at 13:07 UTC
+/// Built on 2024-05-27 at 19:36 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -172,6 +172,7 @@ class _StringsSubscriptionsEn {
 
 	// Translations
 	late final _StringsSubscriptionsDurationEn duration = _StringsSubscriptionsDurationEn._(_root);
+	late final _StringsSubscriptionsPeriodunitEn periodunit = _StringsSubscriptionsPeriodunitEn._(_root);
 }
 
 // Path: errors.email
@@ -210,6 +211,31 @@ class _StringsSubscriptionsDurationEn {
 	String get twoMonth => 'Every 2 months';
 	String get monthly => 'Every month';
 	String get weekly => 'Every week';
+}
+
+// Path: subscriptions.periodunit
+class _StringsSubscriptionsPeriodunitEn {
+	_StringsSubscriptionsPeriodunitEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String day({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: 'Day',
+		other: 'Days',
+	);
+	String week({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: 'Week',
+		other: 'Weeks',
+	);
+	String month({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: 'Month',
+		other: 'Months',
+	);
+	String year({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: 'Year',
+		other: 'Years',
+	);
 }
 
 // Path: <root>
@@ -260,6 +286,7 @@ class _StringsSubscriptionsFr implements _StringsSubscriptionsEn {
 
 	// Translations
 	@override late final _StringsSubscriptionsDurationFr duration = _StringsSubscriptionsDurationFr._(_root);
+	@override late final _StringsSubscriptionsPeriodunitFr periodunit = _StringsSubscriptionsPeriodunitFr._(_root);
 }
 
 // Path: errors.email
@@ -300,6 +327,31 @@ class _StringsSubscriptionsDurationFr implements _StringsSubscriptionsDurationEn
 	@override String get weekly => 'Toutes les semaines';
 }
 
+// Path: subscriptions.periodunit
+class _StringsSubscriptionsPeriodunitFr implements _StringsSubscriptionsPeriodunitEn {
+	_StringsSubscriptionsPeriodunitFr._(this._root);
+
+	@override final _StringsFr _root; // ignore: unused_field
+
+	// Translations
+	@override String day({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('fr'))(n,
+		one: 'Jour',
+		other: 'Jours',
+	);
+	@override String week({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('fr'))(n,
+		one: 'Semaine',
+		other: 'Semaines',
+	);
+	@override String month({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('fr'))(n,
+		one: 'Mois',
+		other: 'Mois',
+	);
+	@override String year({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('fr'))(n,
+		one: 'An',
+		other: 'Ans',
+	);
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -318,6 +370,22 @@ extension on Translations {
 			case 'subscriptions.duration.twoMonth': return 'Every 2 months';
 			case 'subscriptions.duration.monthly': return 'Every month';
 			case 'subscriptions.duration.weekly': return 'Every week';
+			case 'subscriptions.periodunit.day': return ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+				one: 'Day',
+				other: 'Days',
+			);
+			case 'subscriptions.periodunit.week': return ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+				one: 'Week',
+				other: 'Weeks',
+			);
+			case 'subscriptions.periodunit.month': return ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+				one: 'Month',
+				other: 'Months',
+			);
+			case 'subscriptions.periodunit.year': return ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+				one: 'Year',
+				other: 'Years',
+			);
 			default: return null;
 		}
 	}
@@ -338,6 +406,22 @@ extension on _StringsFr {
 			case 'subscriptions.duration.twoMonth': return 'Tous les 2 mois';
 			case 'subscriptions.duration.monthly': return 'Tous les mois';
 			case 'subscriptions.duration.weekly': return 'Toutes les semaines';
+			case 'subscriptions.periodunit.day': return ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('fr'))(n,
+				one: 'Jour',
+				other: 'Jours',
+			);
+			case 'subscriptions.periodunit.week': return ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('fr'))(n,
+				one: 'Semaine',
+				other: 'Semaines',
+			);
+			case 'subscriptions.periodunit.month': return ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('fr'))(n,
+				one: 'Mois',
+				other: 'Mois',
+			);
+			case 'subscriptions.periodunit.year': return ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('fr'))(n,
+				one: 'An',
+				other: 'Ans',
+			);
 			default: return null;
 		}
 	}

@@ -23,3 +23,20 @@ extension RevenueCatLabelsExtensions on PackageType {
     };
   }
 }
+
+extension RevenueCatPeriodUnitExtensions on PeriodUnit {
+  /// Returns the current period unit label of a subscription based on
+  /// the phone language using the given [context].
+  String timeUnitLabel(
+    BuildContext context, {
+    int count = 0,
+    String Function(int count)? unknownLabel,
+  }) =>
+      switch (this) {
+        PeriodUnit.day => context.t.subscriptions.periodunit.day(n: count),
+        PeriodUnit.week => context.t.subscriptions.periodunit.week(n: count),
+        PeriodUnit.month => context.t.subscriptions.periodunit.month(n: count),
+        PeriodUnit.year => context.t.subscriptions.periodunit.year(n: count),
+        PeriodUnit.unknown => unknownLabel?.call(count) ?? '',
+      };
+}

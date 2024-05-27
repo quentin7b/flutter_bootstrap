@@ -19,6 +19,24 @@
             "twoMonth": "Tous les 2 mois",
             "monthly": "Tous les mois",
             "weekly": "Toutes les semaines"
+        },
+        "periodunit": {
+          "day": {
+            "one": "Jour",
+            "other": "Jours"
+          },
+          "week": {
+            "one": "Semaine",
+            "other": "Semaines"
+          },
+          "month": {
+            "one": "Mois",
+            "other": "Mois"
+          },
+          "year": {
+            "one": "An",
+            "other": "Ans"
+          }
         }
     }
 }
